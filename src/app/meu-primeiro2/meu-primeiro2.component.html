@@ -1,0 +1,113 @@
+<p>meu-primeiro2 works!</p>
+<h1>OLHA O TESTEEE</h1>
+
+
+<div>
+    <!-- colocando essas chaves dentro do html iremos conseugir pegar o valor que esta dentro dos arquivos .ts ou .spec.ts -->
+    <!-- {{title}} -->
+    <h1>{{title}}</h1>
+    <!-- <h2>{{ nomePortal }}</h2> -->
+    <!-- <app_meusegundo></app_meusegundo> -->
+    <span> {{teste90 + 10}} </span>
+    <span> {{cursos[2]}} </span>
+
+
+    <span>{{ HEROES }}</span>
+    <ul> 
+        <!-- criamos uma variavel contador que irá pegar cada valor que esta dentro do array de cursos e printar no html criando uma li pra cada valor dentro do array -->
+        <li *ngFor="let curso of cursos">
+            {{curso}}
+        </li>
+    </ul>
+
+    <h2>{{name}} Details</h2>
+    <div><span>id: </span>{{hero.id}}</div>
+    <div><span>name: </span>{{hero.name}}</div>
+
+
+    <ul>
+        <li *ngFor="let pessoas of HEROES">
+            <span>ID: {{pessoas.id}}</span>
+            <span>Name: {{pessoas.name}}</span>
+        </li>
+    </ul>
+
+    <span>{{ cursos }}</span>
+    <article>{{ url }}</article>
+    <article style="background: blueviolet;">{{ getValor() }}</article>
+
+    <!-- logo a baixo vemos duas maneiras de colocar imagem no html -->
+    <img src="{{ urlimagem }}">
+    <img [src]="urlimagem">
+
+    <div>
+        Selecione uma classe
+        <!-- logo aqui em baixo tem uma palavra escrito opaa com o rashtag no comeco, isso seria meio que um ID para a tag select -->
+        <select #opaa (change)="0">
+            <option value=" ">Default</option>
+            <option value="alert-sucess">deu certo</option>
+            <option value="alert-info">informacoes</option>
+            <option value="alert-warning">alerta</option>
+            <option value="alert-danger">Erro</option>
+        </select>
+        <br><br>
+
+        <!-- e é aqui onde tem a logica, entre colchetes estamos dizendo que iremos inserir a classe alert-sucess dentro da classe dessa tag, porem ela so sera inserida quando o valor do opaa que digitamos ali cima for alert-sucess, so perceber que cada tag do select tem um valor -->
+        <div classe="alert" role="alert" [class.alert-success]="opaa.value == 'alert-sucess'">sucess</div>
+        <div classe="alert alert-info" [class.alert-info]="opaa.value == 'alert-info'" >info</div>
+        <div classe="alert alert-warning" [class.alert-warning]="opaa.value == 'alert-warning'" >warning</div>
+        <div classe="alert alert-danger" [class.alert-danger]="opaa.value == 'alert-danger'" >danger</div>
+        <!-- quando selecionamos cada opcao acima a cor irá mudar la no html, estamos inserindo a classe alert em cada uma dessa tag -->
+    </div>
+
+    <!-- aqui seria , cada opcao que for selecionada ali na tag select a cor vai ser alterada aqui nesse p -->
+    <!-- pesando assim com as chaves podemos deixar nosso codigo dinamico -->
+    <p class="alert {{ opaa.value }}">Outro teste </p>
+
+    <!-- aqui ja inserindo os estilos -->
+    <p [style.display] = "opaa.value == 'alert-danger' ? 'block' : 'none'"> Texto oculto</p>
+
+    <!-- quando colocamos parentese nessas palavras estamos dizendo que queremos escutar esse evento, por exemplo na linha de baixo, queremos escutar o evento o click quando ele for acionado, e quando ele for acionado a funcao que esta no evento click sera acionada e irá fazer algo -->
+    <button (click)="botaoclicado()" class="btn btn-primary">click me</button>
+
+    <!-- VER DEPOIS COM OS MANOS PORQUE QUE ESSE INPUT NAO ESTA RECEBENDO O VALOR, O INPUT COM FUNCAO SALVARVALOR -->
+    <input type="text" (keyup)="upp($event)" (keyup.enter) ="salvarvalor($event.target.value)"  />
+    <p style="color: aliceblue;">{{ valoratual + "SHAISJ" }}</p>
+    <p style="color: red !important;">{{ novovalor }}</p>
+
+    <!-- ali na frente que esta entre colchetes estamos dizendo que quando a variavel que esta entre aspas for verdade a classe highlight sera inserida nesta tag -->
+    <span class="alert " role="alert" (mouseover)="MouseOver()" (mouseout)="mouseout()" [class.highlight] = "ismouse">Passei o mouse</span>
+
+    <!-- quando colocamos o nome da variavel entre aspas estamos dizendo que esse input irá iniciar um valor que iremos descedir dentro do componente
+    e o value entre colchetes serve para dizer isso -->
+    <input type="text" [value] = 'nomee' (input)='nomee = $event.target.value' />
+    <!-- essa parte do value ele esta recebendo a variavel criada no componente/
+    e o input entre parentese esta dizendo que o valor que o input ira receber sera inserido na variavel nomee -->
+
+    <!-- IMPORTANTE !!!!! -->
+    <!-- isso serve para atualizar a varaivel, sempre quando for inserir um valor o input e queremos que ele seja atualizado em uma varaivel que esta no html devemos usar os codigos das linhas abaixo -->
+
+    <!-- aula 12 da loiane rever pq esta dando erro na linha de baixo -->
+    <!-- <input type="text" [ngModel]='nomee' (ngModelChange)='nomee = $event' /> -->
+
+    <!-- aula 12 da loiane rever pq esta dando erro na linha de baixo -->
+    <!-- <input type="text" [(ngModel)] = 'nomee' /> -->
+
+    <!-- reforcando o nome do ngmodel é como se fosse o id do ngmodel assim outros codigos irá usa-lo para algo -->
+    <!-- <input type="text" [(ngModel)]="pessoa.nome"> -->
+
+
+    <p class="jao">Voce digitou: {{ nomee }}</p>
+    <p class="jao">Voce digitou: {{ pessoa.nome }}</p>
+    <p class="jao">Voce digitou: {{ pessoa.documento.rg }}</p>
+
+    <!-- esse valor que esta entre aspas estamos dizendo que a variavel valor desse componente irá comecar com valor 10 -->
+    <!-- esse valor tambem podemos passar uma variavel com um valor inicial mas pra isso tem que estar dentro do arquivo .ts do componente desse arquivo html atual -->
+    
+    <!-- linha de baixo esta dando erro , aula 14 da loiane temos exemplo nos componentes -->
+    <!-- (mudouValor)="onMudouValor($event)" -->
+
+    <!-- <app-output-property [valor]="valorinicial" >
+    
+    </app-output-property> -->
+</div>

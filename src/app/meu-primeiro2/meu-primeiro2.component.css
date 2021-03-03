@@ -1,0 +1,30 @@
+p{
+    color: rgb(0, 0, 0);
+}
+html{
+    background: black;
+}
+
+.highlight{
+    background-color: yellow;
+    font-weight: bold;
+    color: black;
+}
+.jao{
+    color: white
+}
+
+.input-group1{
+    width: 400px;
+    margin-left: auto;
+	margin-right: auto;
+}
+.btn-outline-primary{
+    position: absolute;
+    left: 610px;
+}
+.cadastro{
+    position: absolute;
+    left: 470px;
+    bottom: -200%;
+}

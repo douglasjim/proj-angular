@@ -1,0 +1,23 @@
+.ciclo{
+    color: red;
+}
+.uma{
+    color: rgb(0, 255, 42);
+}
+.duas{
+    color: red;
+}
+.tres{
+    background-color: crimson;
+    color: cyan;
+}
+.letra{
+    color: red;
+}
+.fundo{
+    background-color: royalblue; 
+}
+
+.active{
+    color: blueviolet;
+}

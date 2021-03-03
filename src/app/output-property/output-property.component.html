@@ -1,0 +1,96 @@
+<div>
+    <button class="btn btn-primary" (click)="incrementa()">+</button>
+    <!-- readonly serve para que o usuario nao edite o campo do input -->
+    <!-- campoInput é uma variavel que criamos dentro do html, assim pode ser usada no arquivo .ts desse html -->
+    <input type="text" [value]="valor" readonly #campoInput>
+    <button class="btn btn-primary" (click)="decrementa()">-</button>
+</div>
+<div>
+    <p>output-property works! aula 13</p>
+</div>
+
+<app-ciclo></app-ciclo>
+
+<ul>
+    <li *ngFor="let i of cursos2">
+        <span>{{ i }} </span>
+    </li>
+</ul>
+
+<!-- ver do porque esse codigo esta repetindo varias vezes no codigo da linha de baixo -->
+
+<!-- <app-meu-primeiro2>
+    <h1></h1>
+</app-meu-primeiro2> -->
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        Titulo
+    </div>
+    <div class="panel-body">
+        <!-- com esse ng conseguimos isnerir valores fora desse componentes -->
+        <ng-content select=".corpo"></ng-content>
+    </div>
+</div>
+
+<div>
+    <!-- com esse select podemos colocar em lugares especificos os valores que estao dentro da tag personalizada -->
+    <ng-content select=".titulo"></ng-content>
+</div>
+
+<div>
+    <button fundoAmarelo>TESTE BOTAO</button>
+</div>
+<div >
+    <p fundoAmarelo>Texto com fundo amarelo</p>
+</div>
+
+<div MouseLuz>
+    <p>Texto com mouseluz quando passa o mouse</p>
+</div>
+
+<section class="container">
+    <div class="row justify-content-md-center">
+        <div class="col-md-auto">
+        <div class="p-8">
+            <img src={logo} alt="logo" />
+            <form autoComplete="nope">
+            <div className="user-login__form-control">
+                <label htmlFor="email">E-mail</label>
+                <input id="email" type="text" name="email" autoComplete="off" />
+            </div>
+            <div className="user-login__form-control">
+                <label htmlFor="password">Senha</label>
+                <input id="password" type="password" name="password" />
+            </div>
+            </form>
+        </div>
+        </div>
+    </div>
+  </section>
+
+
+  <div class="container">
+    <div class="row justify-content-md-center">
+      <div class="col col-lg-2">
+        1 of 3
+      </div>
+      <div class="col-md-auto">
+        Variable width content
+      </div>
+      <div class="col col-lg-2">
+        3 of 3
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        1 of 3
+      </div>
+      <div class="col-md-auto">
+        Variable width content
+      </div>
+      <div class="col col-lg-2">
+        3 of 3
+      </div>
+    </div>
+  </div>
