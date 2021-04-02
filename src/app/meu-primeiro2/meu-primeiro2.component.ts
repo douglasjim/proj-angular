@@ -126,6 +126,9 @@ export class MeuPrimeiro2Component implements OnInit{
     url: 'www.google.com.br',
   }
 
+  teste: string;
+  teste9000: string;
+
   //PODEMOS CRIAR VARIAVEIS FUNCOES ETC.. PUBLICO OU PRIVADO
   public tdbk: Number
   private tdb: Number
