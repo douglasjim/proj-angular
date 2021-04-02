@@ -2,6 +2,9 @@ import { Live } from './live.modal';
 import { Component, OnInit } from '@angular/core';
 import { LiveService } from './live.service';
 import { ResponsePageble } from './responsePageble.model'
+import { MatSliderModule } from '@angular/material/slider';
+import { DefaultFull } from '../shared/index.directive'
+
 
 @Component({
   selector: 'app-ciclo',
@@ -10,8 +13,16 @@ import { ResponsePageble } from './responsePageble.model'
 })
 export class CicloComponent implements OnInit {
 
+  okok(ad1: number,ad2: number):number{
+
+    console.log(ad1)
+    console.log(ad2)
+    return ad1+ad2
+  }
+
+
   cursos: string[] = ["angular7","Javascript"];
-  mostrarcursos: boolean = true //variavel booleana
+  mostrarcursos: boolean = true 
   kaioken: any = '90'
   olhaohidden: boolean = true
   Qualaba: string = "";
@@ -19,14 +30,22 @@ export class CicloComponent implements OnInit {
 
   tarefa:any = {
     desc:'descricao da tarefa',
-    responsavel: null 
+    responsavel: {
+      usuario:{
+        nome: "opaaa222222"
+      }, 
+      nome: "opaaa"
+    },
+    usuario: 'okloias',
+    nome: "opaaa"
   }
 
   
 
-  Mudou(){
+  Mudou(ad:number){
     this.mostrarcursos = !this.mostrarcursos,
     this.olhaohidden = !this.olhaohidden
+    console.log(this.okok(Number(ad),30))
   }
 
   //nao esquecer de qunaod for array de agum tipo temos que colocar os colchetes do lado do tipo
@@ -37,6 +56,7 @@ export class CicloComponent implements OnInit {
   here2(){
     this.Listaitens.push(this.teste10)
     console.log(this.Listaitens)
+    console.log("this.teste10")
   }
 
   //funcao para trocar o valor da variavel T or F

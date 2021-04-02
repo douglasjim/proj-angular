@@ -78,9 +78,8 @@ ja no click, caso a funcao clica for acionada a variavel Qualaba irá receber o 
     </li>
 </ul>
 
-  
+<input type="text" [(ngModel)]="teste10">
 <button (click) = "here2()"> here
-    <input type="text" [(ngModel)]="teste10">
     <h1>
         <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-alarm-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
             <path fill-rule="evenodd" d="M6 .5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1H9v1.07a7.001 7.001 0 0 1 3.274 12.474l.601.602a.5.5 0 0 1-.707.708l-.746-.746A6.97 6.97 0 0 1 8 16a6.97 6.97 0 0 1-3.422-.892l-.746.746a.5.5 0 0 1-.707-.708l.602-.602A7.001 7.001 0 0 1 7 2.07V1h-.5A.5.5 0 0 1 6 .5zM.86 5.387A2.5 2.5 0 1 1 4.387 1.86 8.035 8.035 0 0 0 .86 5.387zM11.613 1.86a2.5 2.5 0 1 1 3.527 3.527 8.035 8.035 0 0 0-3.527-3.527zM8.5 5.5a.5.5 0 0 0-1 0v3.362l-1.429 2.38a.5.5 0 1 0 .858.515l1.5-2.5A.5.5 0 0 0 8.5 9V5.5z"/>
@@ -92,26 +91,28 @@ ja no click, caso a funcao clica for acionada a variavel Qualaba irá receber o 
     
 </button>
 
+<br><br><br>
+<input type="number" [(ngModel)]="teste10">
+<!-- <h2 [defaultt]='90'>TESTE {{ teste10 }}</h2> -->
+
 
 <!-- adicionado ou removendo classes na tag div -->
 <div [ngClass]="{'letra':mostrarcursos,'fundo':!mostrarcursos}">This div is initially saveable, unchanged, and special.</div>
 
 <div>
-    <p [ngStyle]="{'color':(mostrarcursos? 'red' : 'blue'),'background':(mostrarcursos? 'yellow' : 'white'),'fontSize': Fonte + 'px','height': Fonte + 'px'}" >Irei mudar quando for clicar</p>
+    <p [ngStyle]="{'color':(mostrarcursos? 'white' : 'blue'),'background':(mostrarcursos? 'yellow' : 'white'),'fontSize': Fonte + 'px','height': Fonte + 'px'}" >Irei mudar quando for clicar</p>
 
-    <button (click)="Mudou()">CLick</button>
+    <button (click)="Mudou(Fonte)">CLick</button>
     <input type="text" [(ngModel)]="Fonte">
 </div>
 
 <p>{{tarefa.desc }}</p>
 <!-- na linha de baixo estamos dizendo que se o valor responsavel for diferente de numero entao mostra na tela aspas vazia -->
-<p>Resonsavel: {{ tarefa.responsavel != null ? tarefa.responsavel.nome : '' }}</p>
+<p>Resonsavel: {{ tarefa.responsavel != null ? tarefa.responsavel.nome : 'okok' }}</p>
 <!-- ai temos esse metodo que se chama elvis, usamos ele para verificar se ha valor nulo dentro de alguma variavel para nao da erro na hora de printar -->
 
 <!-- na linha de baixo é usado o famoso (elvis) , usamos o acento ? para dizer, se existir nulo em responsave e usuario nao printar nada se exisitr valor printa alguma coisa
 isso serve porque possa existir nulo e quebrar ou dar erro no codigo -->
 <p>Responsavel: {{ tarefa.responsavel?.usuario?.nome }} </p>
+<!-- <mat-checkbox checked="true">Angular Checkbox Checked</mat-checkbox> -->
 
-<div fxLayout="row" fxLayoutAlign="end none">
-    TESTE
-</div>

@@ -3,9 +3,12 @@ import { OutputPropertyComponent } from './output-property.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+
 //componentes - o nome que esta entre chaves tem que ser o mesmo da classe exportada
 import { MeuPrimeiro2Component } from '../meu-primeiro2/meu-primeiro2.component';
 import { CicloComponent } from '../ciclo/ciclo.component';
+import { BrowserModule } from '@angular/platform-browser';
 
 //Material
 // import {MatButtonModule} from '@angular/material/button';
@@ -19,6 +22,7 @@ import { CicloComponent } from '../ciclo/ciclo.component';
     // MatIconModule,
     // MatDialogModule,
     // MatDividerModule
+    MatDatepickerModule
   ],
 
   //aqui inserimos os componentes de outras pastas
@@ -35,7 +39,9 @@ import { CicloComponent } from '../ciclo/ciclo.component';
     CommonModule,
     FormsModule,
     HttpHeaders,
-    HttpClientModule
+    HttpClientModule,
+    BrowserModule,
+    MatDatepickerModule
   ]
 })
 export class OutputPropertyModule {

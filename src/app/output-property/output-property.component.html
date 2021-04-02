@@ -16,12 +16,14 @@
         <span>{{ i }} </span>
     </li>
 </ul>
+<a>OLHA O TESTEEEEEEEE</a>
+<input type="text" [(ngModel)]="ololo">
+<button (click)="add()">KAIKOEN</button>
+{{nomedoCurso + " OLOLO"}}
 
 <!-- ver do porque esse codigo esta repetindo varias vezes no codigo da linha de baixo -->
 
-<!-- <app-meu-primeiro2>
-    <h1></h1>
-</app-meu-primeiro2> -->
+<!-- <app-meu-primeiro2></app-meu-primeiro2> -->
 
 <div class="panel panel-default">
     <div class="panel-heading">
@@ -45,9 +47,16 @@
     <p fundoAmarelo>Texto com fundo amarelo</p>
 </div>
 
-<div MouseLuz>
+<div MouseLuz [default]="kkkk" [default1]="kkkk1">
     <p>Texto com mouseluz quando passa o mouse</p>
 </div>
+
+<div>
+  <input type="text" [(ngModel)]="kkkk">
+  <p >USANDO O @INPUT{{kkkk}}</p>
+</div>
+
+<input type="text" [(ngModel)]="kkkk1">
 
 <section class="container">
     <div class="row justify-content-md-center">
@@ -57,7 +66,9 @@
             <form autoComplete="nope">
             <div className="user-login__form-control">
                 <label htmlFor="email">E-mail</label>
-                <input id="email" type="text" name="email" autoComplete="off" />
+                <input id="email" type="text" name="email" autoComplete="off" [(ngModel)]="email" />
+                {{email}}
+                <button (click)="tipeof()">TYPEOF</button>
             </div>
             <div className="user-login__form-control">
                 <label htmlFor="password">Senha</label>
@@ -69,7 +80,9 @@
     </div>
   </section>
 
+  
 
+<button (click)="add4()">PPPPPPP</button>
   <div class="container">
     <div class="row justify-content-md-center">
       <div class="col col-lg-2">
@@ -94,3 +107,11 @@
       </div>
     </div>
   </div>
+
+
+  <!-- <mat-form-field appearance="fill">
+  <mat-label>Choose a date</mat-label>
+  <input matInput [matDatepicker]="picker">
+  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+  <mat-datepicker #picker></mat-datepicker>
+</mat-form-field> -->

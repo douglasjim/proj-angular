@@ -1,4 +1,4 @@
-import { Directive,ElementRef,Renderer2, HostListener, HostBinding } from "@angular/core";
+import { Directive,ElementRef,Renderer2, HostListener, HostBinding, Input } from "@angular/core";
 
 //meta dado o hostlistener -  serve para escutar algum evento
 
@@ -25,22 +25,28 @@ export class MouseLuz{
     @HostListener('click') mouseenter(){
         //this._render2.setStyle(this._elementRef.nativeElement,'background-color','blue')
         //assim ficando mais facil alterar as cores das tags
-        this.backgroundColor = 'blue'
+        this.backgroundColor = this.default
+        //alert(Number(this.default1)+10)
     }
 
     //com este host fica mais facil, rapido e com menos codigo alterar styles utilizando o hostlistener
     //                            aqui em baixo seria o nome da variavel que iremos inserir o nome da cor que no caso seria um valor
     @HostBinding('style.backgroundColor') backgroundColor: string;
+
+    @Input() default: string
+
+    @Input() default1: number
     
     constructor(private _elementRef: ElementRef, private _render2: Renderer2){
 
     }
 
-    //com o ngOnInit , ele serve para quando o component for carregador ele ja é acionado
+    //quando a tela é carregada o ngonit ja é chamado pra fazer algo
     ngOnInit(){
         //no caso do background ele irá tornar a tag com valor padrao que neste caso é o pink
         this.backgroundColor = 'pink'
         this._render2.setStyle(this._elementRef.nativeElement,'color','yellow')
+        this.default1 = 100
     }
 }
 

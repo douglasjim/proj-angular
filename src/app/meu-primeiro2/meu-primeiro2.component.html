@@ -2,16 +2,16 @@
 <h1>OLHA O TESTEEE</h1>
 
 
-<div>
+<div style="background: rgb(0, 0, 0);">
     <!-- colocando essas chaves dentro do html iremos conseugir pegar o valor que esta dentro dos arquivos .ts ou .spec.ts -->
     <!-- {{title}} -->
+    <h1>{{ololo }}</h1>
     <h1>{{title}}</h1>
+    <h1>{{ teste900 }}</h1>
     <!-- <h2>{{ nomePortal }}</h2> -->
     <!-- <app_meusegundo></app_meusegundo> -->
     <span> {{teste90 + 10}} </span>
     <span> {{cursos[2]}} </span>
-
-
     <span>{{ HEROES }}</span>
     <ul> 
         <!-- criamos uma variavel contador que irá pegar cada valor que esta dentro do array de cursos e printar no html criando uma li pra cada valor dentro do array -->
@@ -23,7 +23,9 @@
     <h2>{{name}} Details</h2>
     <div><span>id: </span>{{hero.id}}</div>
     <div><span>name: </span>{{hero.name}}</div>
-
+    
+    
+    <app-output-property (mudouValor) = "onMudou($event)"></app-output-property>
 
     <ul>
         <li *ngFor="let pessoas of HEROES">
@@ -110,4 +112,54 @@
     <!-- <app-output-property [valor]="valorinicial" >
     
     </app-output-property> -->
+
+    <p style="color: white;">TESTE DO SEVICO</p>
+    <input type="text" [(ngModel)]="okok" (click)="Addcurso(okok)" />
+    <!-- [value] = 'nomee' (click)='Addcurso($event.target.value)' -->
+    <p style="color: white;">TESTE DO SEVICO INPUT DE CIMA</p>
+    <p style="color: white;">ANGULAR MATERIAL !!!!!!!!!!!!!!!</p>
+
+        <input matInput [matDatepicker]="picker">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+        
+
+
+        <!-- <mat-form-field appearance="fill">
+            <mat-label>Input</mat-label>
+            <input matInput>
+          </mat-form-field> -->
+
+<!-- 
+        <mat-form-field appearance="fill">
+            <mat-label>Input</mat-label>
+            <input matInput>
+          </mat-form-field>
+          <mat-form-field appearance="fill">
+            <mat-label>Select</mat-label>
+            <mat-select>
+              <mat-option value="one">First option</mat-option>
+              <mat-option value="two">Second option</mat-option>
+            </mat-select>
+          </mat-form-field>
+          <mat-form-field appearance="fill">
+            <mat-label>Textarea</mat-label>
+            <textarea matInput></textarea>
+          </mat-form-field> -->
+
+          <!-- podemos passar mais informacoes ou melhor parametro no pipes que temos os pipes sao essas palavinhas chaves que colocamos apos esse risco aqui no HTML exeplos nas linhas abaixo -->
+          <p style="color: white;">{{ varias.titulo | uppercase}}</p>
+          <!-- esse numero apos o ponto indica a quantidade de casa decimais que ira mostrar apos a virgula e antes da virgula tbm -->
+          <p style="color: white;">{{ varias.rating | number:'1.1-1'}}</p>
+          <p style="color: white;">{{ varias.numeroDePaginas | number }}</p>
+          <!-- currency para dizer que estamos dizendo de valor, e passamos parametro indicando qual moeda entre aspas neste caso real -->
+          <p style="color: white;">{{ varias.preco | currency:'BRL'}}</p>
+          <!-- e podemos tambem formatar a data com dois MM mostra o numero do mes com 3 MMM mostra a palavra do mes-->
+          <p style="color: white;">{{ varias.dataDeLancamento | date:'dd-MM-yyyy'}}</p>
+          <p style="color: white;">{{ varias.url }}</p>
+          <p style="color: white;">{{ varias | json}}</p>
+
+
+          
+      
 </div>
