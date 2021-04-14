@@ -1,3 +1,4 @@
+import { routing } from './app.routing';
 import { CamelCasePipe } from './meu-primeiro2/meu-primeiro2.pipe';
 
 import { BrowserModule } from '@angular/platform-browser';
@@ -58,6 +59,14 @@ import { FundoAmareloDirective } from './shared/fundo-amarelo.directive'
 import { MouseLuz } from './shared/mouseluz.directive';
 import { MeuPrimeiro2Component } from './meu-primeiro2/meu-primeiro2.component';
 import { DefaultFull } from './shared/index.directive';
+import { LoginComponent } from './login/login.component';
+import { HomeComponent } from './home/home.component';
+import { CursosComponent } from './cursos/cursos.component';
+
+import { RouterModule, Routes } from "@angular/router";
+
+import { AccordionModule } from 'ngx-bootstrap/accordion';
+
 
 
 //material
@@ -78,13 +87,18 @@ import { DefaultFull } from './shared/index.directive';
     MouseLuz,
     MeuPrimeiro2Component,
     DefaultFull,
-    CamelCasePipe
+    CamelCasePipe,
+    LoginComponent,
+    HomeComponent,
+    CursosComponent
     
     
     
   ],
   imports: [
     BrowserModule,
+    AccordionModule.forRoot(),
+    BrowserAnimationsModule,
     AppRoutingModule,
     FormsModule,
     BrowserAnimationsModule,
@@ -134,7 +148,7 @@ import { DefaultFull } from './shared/index.directive';
     DragDropModule,
     PortalModule,
     ScrollingModule,
-    
+    routing
     
     
   ],

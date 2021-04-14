@@ -1,3 +1,4 @@
+import { DataSource } from '@angular/cdk/collections';
 import { not } from '@angular/compiler/src/output/output_ast';
 import { okok } from './fisrtFunction';
 //import { CicloComponent } from './ciclo.component'
@@ -16,6 +17,7 @@ describe('String matche test',()=>{
     //PODEMOS CRIAR UMA VARIAVEL FORA DO IT PARA QUE OS PROXIMOS ITS POSSAO PEGAR DA MESMA VARIAVEL INVES DE CRIAR UMA VARIAVEL PRA CADA IT
 
     let kkkk = "look for meee"
+    let ok = DataSource
     let firstSTR = "Hello world!";
     let firstSTR2 = "Hello world";
     it('Testing String, "TO BE" for matcher ===',()=>{

@@ -7,6 +7,8 @@ import { Meuprimeiro2Service } from './meu-primeiro2.service';
 //import { output } from '../output-property/output-property.component';
 import { MeuSegundo } from './meu_segundo/meu_segundo.component'
 import {OutputPropertyComponent} from '../output-property/output-property.component'
+import { promise } from 'selenium-webdriver';
+import { rejects } from 'assert';
 
 @Component({
   selector: 'app-meu-primeiro1',
@@ -126,6 +128,14 @@ export class MeuPrimeiro2Component implements OnInit{
     url: 'www.google.com.br',
   }
 
+  valorAsync = new Promise((resolve,reject) => {
+    setTimeout(()=> resolve("resolvido assicrono"),9000)
+    //reject(console.log("sei la tentei"))
+
+  });
+
+
+
   teste: string;
   teste9000: string;
 
@@ -137,6 +147,8 @@ export class MeuPrimeiro2Component implements OnInit{
     this.tdb = this.cursoss
     //alert(this.tdb)
   }
+
+  
 
 
 
