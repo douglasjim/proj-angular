@@ -148,7 +148,7 @@
           </mat-form-field> -->
 
           <!-- podemos passar mais informacoes ou melhor parametro no pipes que temos os pipes sao essas palavinhas chaves que colocamos apos esse risco aqui no HTML exeplos nas linhas abaixo -->
-          <p style="color: white;">{{ varias.titulo | uppercase | lowercase}}</p>
+          <p style="color: white;">{{ varias.titulo | uppercase | lowercase | camelcase}}</p>
           <!-- esse numero apos o ponto indica a quantidade de casa decimais que ira mostrar apos a virgula e antes da virgula tbm -->
           <p style="color: white;">{{ varias.rating | number:'1.1-1'}}</p>
           <p style="color: white;">{{ varias.numeroDePaginas | number }}</p>
@@ -159,6 +159,7 @@
           <p style="color: white;">{{ varias.url }}</p>
           <p style="color: white;">{{ varias | json}}</p>
 
+          <p style="color: white;"> {{ valorAsync | async}} </p>
 
           
       
